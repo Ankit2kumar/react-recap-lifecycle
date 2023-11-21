@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+//import  Button  from "react-bootstrap/Button";
+import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import MyList from "./components/MyList";
+import { Col, Container, Row } from "react-bootstrap";
+
 
 function App() {
+
+  const [count, setCount]= useState({num:0});
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+     {/* <Button onClick={()=> setCount({num:count.num-1})}>DECREMENT</Button>
+      {count.num}
+      <Button onClick={()=> setCount({num: count.num+1})}>INCREMENT</Button> */}
+      <Container>
+      <Row>
+        <Col>
+        <MyList/>
+        </Col>
+      </Row>
+      </Container>
       </header>
-    </div>
+      </div>
+      
   );
 }
 
