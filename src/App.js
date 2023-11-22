@@ -4,11 +4,16 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import MyList from "./components/MyList";
 import { Col, Container, Row } from "react-bootstrap";
+import MyAlert from './components/MyAlert';
 
 
 function App() {
 
-  const [count, setCount]= useState({num:0});
+  const [selectedCharacter, setSelectedCharacter]=useState("")
+
+  const handleClick=(e)=>{
+    setSelectedCharacter( e.target.innerText)
+}
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +23,10 @@ function App() {
       <Container>
       <Row>
         <Col>
-        <MyList/>
+        <MyList selectedCharacter={selectedCharacter} handleClick={handleClick}/>
+        </Col>
+        <Col className='my-auto'>
+        <MyAlert selectedCharacter= {selectedCharacter}/>
         </Col>
       </Row>
       </Container>

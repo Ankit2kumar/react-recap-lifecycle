@@ -1,12 +1,10 @@
 import {ListGroup} from 'react-bootstrap'
-import { useState } from 'react';
 
-function MyList(){
 
-    const [selectedCharacter, setSelectedCharacter]=useState("")
-    const handleClick=(e)=>{
-        setSelectedCharacter( e.target.innerText)
-    }
+function MyList({handleClick, selectedCharacter}){
+
+    
+    
 
     return(
 <>
