@@ -6,7 +6,7 @@ const MyAlert=(props)=>{
 
         <>
         <Alert variant ="success">
-        {props.selectedCharacter || ' none'}
+        Selected Character: {props.selectedCharacter || ' none'}
 
         </Alert>
         </>
